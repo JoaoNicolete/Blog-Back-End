@@ -38,6 +38,10 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
+
 	
 	public Postagem(long id, @NotNull @Size(min = 5, max = 100) String titulo,
 			@NotNull @Size(min = 10, max = 500) String texto, Date data, Tema tema) {
